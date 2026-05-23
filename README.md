@@ -1,130 +1,128 @@
-# Inicio en NaN.builders — De 0 a Agente IA con Voz
+# Inicio en NaN.builders
 
-Una guía paso a paso para la gente normal (no ingenieros de NASA) que ha pagado NaN.builders y quiere tener su propio agente de inteligencia artificial funcionando, con voz, que pueda investigar cosas, acceder a APIs, desplegar webs, y ser su segundo cerebro.
-
-Escrito por [@Ntizar](https://github.com/Ntizar) después de hacerlo él mismo.
+Una guía paso a paso para la gente que no sabe por dónde empezar.
 
 ---
 
-## ¿Qué es NaN.builders para un mortal?
+## ¿Qué es esto?
 
-Imagina que alquilas un **ordenador pequeño en Internet** (una "microVM") que está encendido 24/7. Dentro de ese ordenador vive **Koldo** (o como quieras llamar a tu agente), que es como tener a ChatGPT pero funcionando en un sitio donde tú controlas todo: tus conversaciones, tus datos, tus claves, tus proyectos.
+NaN.builders es un servicio donde alquilas un **ordenador pequeño en Internet** (lo llaman "agente" o "microVM") que está siempre encendido. Dentro de ese ordenador puedes tener un **asistente de inteligencia artificial** que habla contigo, investiga cosas por ti, y hasta puede servir páginas web.
 
-Además, tienes acceso a **modelos de IA potentes** (como DeepSeek) para que Koldo sea listo.
-
-Cuesta ~74€/mes.
+El asistente no es ChatGPT ni nada de fuera — **vive en tu ordenador**. Tú controlas todo.
 
 ---
 
-## Paso 1: Pagar y crear cuenta
+## Paso 1: Registrarse
 
 1. Ve a [nan.builders](https://nan.builders)
-2. Arriba a la derecha, **Get Started** o **Pricing**
-3. Elige **NaN Member** (el que vale ~74€/mes)
-4. Pagas con tarjeta de crédito/débito
-5. Te llegará un email con acceso al dashboard
+2. Pincha en **Plans** o **Pricing**
+3. Elige el plan **NaN Member** (el que incluye el agente)
+4. Te pedirá tarjeta de crédito
+5. Cuando pagues, te llegará un email con un enlace al dashboard
 
-> 💡 **Tip:** Tras pagar, entras en el Discord de NaN.builders. La comunidad es maja, únete.
-
----
-
-## Paso 2: Crear tu agente (microVM)
-
-Una vez dentro del dashboard en [cloud.nan.builders](https://cloud.nan.builders/dashboard):
-
-1. Busca un botón que ponga **New Agent** o **Create Agent**
-2. Asígnale un nombre (ej: "mi-agente")
-3. Selecciona la región **EU** (tus datos se quedan en Europa)
-4. Haz clic en **Create**
-
-⌛ Espera 1-2 minutos mientras se crea. Verás algo como:
-
-```
-Estado: ✅ Running
-```
-
-¡Enhorabuena! Ya tienes tu propio ordenador en Internet.
+> 💡 **Nota:** Si no sabes inglés, no pasa nada. La web tiene un diseño visual, puedes guiarte por los dibujos.
 
 ---
 
-## Paso 3: Primer acceso — la consola
+## Paso 2: Crear tu ordenador (el "agente")
 
-En el panel de tu agente, busca la pestaña **Console** (o terminal web).
+Una vez dentro del panel de control en [cloud.nan.builders](https://cloud.nan.builders/dashboard):
 
-Se abrirá una pantalla negra con texto blanco. Es la terminal de tu ordenador remoto. Escribe:
+1. Aparecerá un botón grande que pone **New Agent** o **Create**
+2. Dale un nombre (por ejemplo: `mi-asistente`)
+3. Elige región **EU** — tus datos se quedan en Europa
+4. Pincha en **Create** o **Deploy**
 
-```bash
+Aparecerá un círculo que gira. Espera. Cuando se ponga verde y ponga **Running**, ya está.
+
+Acabas de alquilar un ordenador. Enhorabuena 🎉
+
+---
+
+## Paso 3: La consola (el teclado de tu ordenador)
+
+En el panel de control de tu agente, busca una pestaña llamada **Console**. Puede tener un icono de pantalla o de terminal.
+
+Se abrirá una ventana negra con letras blancas. Es como tener el teclado de tu ordenador remoto.
+
+Puedes escribir comandos aquí. Prueba a escribir:
+
+```
 whoami
 ```
 
-Te responderá `root`. Eres el administrador. Puedes hacer lo que quieras aquí.
+Te responderá `root`. Eso significa que eres el dueño. No pasa nada si la primera vez no entiendes nada — iremos paso a paso.
 
-> 💡 **Tip:** Si la consola se cuelga, recarga la página. Pasa a veces.
-
----
-
-## Paso 4: Conectar Telegram
-
-Tu agente vive dentro del ordenador, pero necesitas poder hablar con él desde el móvil. Para eso usamos **Telegram**.
-
-1. En el panel de tu agente, busca la pestaña **Env** (Environment Variables)
-2. Verás que ya hay dos variables:
-   - `OPENAI_API_KEY` — la clave del clúster (no la toques)
-   - `TELEGRAM_BOT_TOKEN` — aquí va el token de tu bot
-3. Para conseguir el token:
-
-   a. Abre Telegram y busca **@BotFather**
-   b. Escribe `/newbot`
-   c. Te pide nombre: ponle `Koldo` (o el que quieras)
-   d. Te pide username: `TuNombreBot` (tiene que acabar en `bot`)
-   e. BotFather te dará un token como: `7234567890:AAHdqTcvM3xCVBz-xyz...`
-   f. Copia ese token
-
-4. Vuelve a **cloud.nan.builders** > tu agente > **Env** tab
-5. En la variable `TELEGRAM_BOT_TOKEN`, pega el token
-6. Guarda los cambios
-7. Reinicia el agente (suele haber un botón **Restart**)
-
-> Puede tardar un minuto. Cuando se reinicie, abre Telegram, busca tu bot por el nombre que le pusiste, y escribe `/start` o "Hola".
-
-🎉 **Ya puedes hablar con tu agente desde el móvil.**
+> 💡 **Tip:** Si la pantalla se queda congelada, cierra la pestaña y vuelve a abrir la consola.
 
 ---
 
-## Paso 5: Primera conversación
+## Paso 4: Conectar tu asistente con Telegram (tu móvil)
 
-Abre Telegram y escribe algo como:
+Ahora tu asistente vive dentro del ordenador, pero no puedes hablar con él todavía. Necesitas un **teléfono** para chatear. Telegram es la aplicación que usaremos.
+
+Si no tienes Telegram, instálala desde Google Play o App Store. Es gratis.
+
+### 4.1 Crear un bot en Telegram
+
+Telegram tiene un usuario especial llamado **BotFather**. Es quien crea bots.
+
+1. Abre Telegram
+2. Busca **@BotFather** en el buscador (la lupa)
+3. Entra en su chat y escribe: `/newbot`
+4. BotFather te preguntará el **nombre** de tu bot. Pon el que quieras, por ejemplo: `Mi Asistente`
+5. Luego te pedirá un **username**. Tiene que acabar en `bot`. Por ejemplo: `MiAsistenteBot`
+6. Si el nombre está libre, BotFather te dará un **token**. Es una cadena larga de letras y números como esta:
 
 ```
-Hola Koldo, ¿qué sabes hacer?
+7234567890:AAHdqTcvM3xCVBz-NTcf4H7D7E
 ```
 
-Te responderá. Ya estás hablando con tu agente de IA.
+**Ese token es la llave de tu bot.** Sin ella no funciona. Cópiala y no la compartas con nadie.
 
-> 💡 **Tip:** No tengas miedo de hablarle informal. Responderá como tú le hables.
+### 4.2 Poner el token en tu ordenador
+
+1. Ve a [cloud.nan.builders](https://cloud.nan.builders/dashboard)
+2. Pincha en tu agente
+3. Busca la pestaña **Env** (puede poner "Environment" o "Variables")
+4. Verás una variable que se llama `TELEGRAM_BOT_TOKEN`
+5. Pega ahí el token que te dio BotFather (el número largo)
+6. Guarda los cambios (suele haber un botón **Save**)
+
+### 4.3 Reiniciar
+
+Busca un botón que ponga **Restart** o **Reboot**. Púlsalo.
+
+Espera un minuto a que se reinicie. Cuando vuelva a estar **Running**:
+
+1. Abre Telegram
+2. Busca tu bot por el nombre que le pusiste
+3. Entra en su chat y escribe: `Hola`
+
+Te responderá. **Ya puedes hablar con tu asistente desde el móvil** 📱
 
 ---
 
-## Paso 6: Activar la voz 🎤🔊
+## Paso 5: Darle voz 🎤🔊
 
-Esto mola. Vas a poder mandarle **audios** y que te **responda con voz**. Como un walkie-talkie pero con IA.
+Esto es lo mejor. Tu asistente puede **escuchar audios** y **responderte con voz**. Como un walkie-talkie con superpoderes.
 
-Abre la **Console** de tu agente en cloud.nan.builders y pega esto:
+### 5.1 Instalar el oído (STT)
+
+Abre la **Console** de tu agente (la pantalla negra).
+
+Copia y pega este texto (pincha en el icono para copiarlo):
 
 ```bash
 source /opt/hermes/.venv/bin/activate
 uv pip install faster-whisper
 ```
 
-Espera 30 segundos mientras se instala. Cuando termine, escribe:
+Espera unos segundos. Cuando termine de escribir cosas, estará instalado.
 
-```bash
-kill -TERM 1
-```
+### 5.2 Configurar la voz
 
-Esto reinicia el agente (no te asustes, Kubernetes lo levanta solo en segundos).
-
-Cuando vuelva a estar activo, necesitas restaurar la configuración de voz. Desde la consola escribe:
+Ahora pega esto:
 
 ```bash
 cat > /hermes-home/config.yaml << 'EOF'
@@ -144,120 +142,139 @@ tts:
 EOF
 ```
 
-Ahora escribe en Telegram a tu agente:
+### 5.3 Reiniciar para que coja los cambios
 
-```
-Respóndeme en audio: prueba de voz
-```
-
-Te mandará un mensaje de voz. Dale al play. **Tu agente te habla.**
-
-Para hablar tú, simplemente pulsa el micrófono de Telegram, graba un mensaje, y envíalo. El agente lo escuchará y te responderá.
-
-> ⚠️ **Importante:** Si el agente se reinicia, la configuración de voz se pierde. Si pasa, repite el `cat` de arriba.
-
----
-
-## Paso 7: Guardar tus claves de APIs de forma segura
-
-Si quieres que tu agente pueda acceder a servicios externos (por ejemplo, datos de transporte público, electricidad, GitHub...), necesitas guardar las claves.
-
-**Esto es crítico:** las claves NUNCA se escriben en repositorios de código. Se guardan como variables de entorno.
-
-En el panel de cloud.nan.builders, pestaña **Env**, añade:
-
-| Clave | Valor | Qué es |
-|-------|-------|--------|
-| `GITHUB_TOKEN` | `ghp_tu_token_aqui` | Para acceder a tus repos de GitHub |
-| `NAP_API_KEY` | `tu-clave-nap` | Para datos de transporte público |
-| `ESIOS_API_TOKEN` | `tu-clave-esios` | Para datos eléctricos |
-
-Cada servicio te da su propia clave. Guárdalas aquí y estarán seguras.
-
----
-
-## Paso 8: Desplegar una web 🕸️
-
-Tu agente no solo habla — también puede servir páginas web. Vas a crear una URL pública como `tudashboard.apps.nan.builders`
-
-1. En cloud.nan.builders > tu agente, pestaña **Web** o **HTTP**
-2. Añade una nueva exposición:
-   - **Puerto interno:** `3000`
-   - **Subdominio:** el nombre que quieras (ej: `nap`)
-
-3. Ahora desde la **Console**, prepara un proyecto web:
+Pega esto:
 
 ```bash
-# Ejemplo: un dashboard simple
+kill -TERM 1
+```
+
+No te asustes. El ordenador se reinicia solo (lo gestiona NaN). Espera 30 segundos.
+
+### 5.4 Probar
+
+Abre Telegram.
+
+**Para que te hable:**
+Escribe: `Respóndeme en audio: hola, ¿qué tal?`
+Te mandará un mensaje de voz. Pulsa play y te escucharás.
+
+**Para hablarle tú:**
+Pulsa el micrófono de Telegram, graba lo que quieras, y envíalo. 
+Tu asistente lo escuchará y te contestará.
+
+> ⚠️ **Importante:** Si el agente se reinicia alguna vez (por cualquier motivo), se te olvida la configuración de la voz. Solo tienes que volver al paso 5.2 (el comando `cat`) y repetirlo. No pasa nada.
+
+---
+
+## Paso 6: Guardar claves para servicios externos
+
+Tu asistente puede usar servicios de fuera: datos del gobierno, APIs del tiempo, lo que sea. Para eso necesita **claves** (como contraseñas).
+
+**Esto es muy importante:** las claves nunca se escriben en el código. Se guardan en un sitio seguro.
+
+### Dónde guardarlas
+
+En el panel de cloud.nan.builders, pestaña **Env** (la misma donde pusiste el token del bot).
+
+Allí puedes añadir variables. Por ejemplo:
+
+| Clave (nombre) | Valor (lo que te den) |
+|-------|--------|
+| `MI_API_KEY` | `abc123def456...` |
+
+Cada servicio te dará una clave distinta. Las pones aquí y tu asistente podrá usarlas.
+
+---
+
+## Paso 7: Publicar una web 🕸️
+
+Tu ordenador también puede servir páginas web. Vas a conseguir una dirección como `tumola.apps.nan.builders`
+
+### 7.1 Preparar la exposición web
+
+En cloud.nan.builders > tu agente, busca la pestaña **Web** o **HTTP Exposure**.
+
+Añade una entrada:
+
+- **Puerto:** `3000`
+- **Subdominio:** el nombre que quieras (ej: `miproyecto`)
+
+Guarda. Ahora `miproyecto.apps.nan.builders` apunta a tu ordenador.
+
+### 7.2 Subir un proyecto web
+
+Abre la **Console** y escribe:
+
+```bash
 cd /persist
-git clone https://github.com/tuusuario/tu-repo
+git clone https://github.com/tu-usuario/tu-repo
 cd tu-repo
+```
+
+Si tu proyecto necesita instalarse:
+
+```bash
 npm install
 npm run build
 ```
 
-4. Arranca el servidor:
+Luego arrancas el servidor:
 
 ```bash
-cd /persist/tu-repo && node server.js &
+node server.js &
 ```
 
-5. Tu web estará viva en `https://tudashboard.apps.nan.builders`
+Y tu web estará viva en `miproyecto.apps.nan.builders` 🌐
 
-> 💡 **Tip:** Si la web no carga, asegúrate de que el servidor está en el puerto 3000 (el que pusiste en la exposición).
-
----
-
-## Paso 9: Tu repositorio personal de configuración
-
-Crea un repositorio PRIVADO en GitHub para guardar las skills de tu agente, notas y configuraciones:
-
-```bash
-source /root/.env   # carga tu token de GitHub
-git clone https://github.com/tuusuario/mi-repo-privado.git
-```
-
-Ahí guardarás todo lo que tu agente va aprendiendo.
+> No sabes qué proyecto poner? Crea un repositorio en GitHub con un `index.html` básico y clónalo. Luego sirve el archivo.
 
 ---
 
-## Resumen visual de lo que tienes
+## Lo que NO debes hacer
 
-```
-📱 Tú (Telegram móvil)
-   │
-   ▼ audios y textos
-🎙️ Koldo (tu agente IA en el microVM de NaN)
-   │
-   ├── 🤖 Cerebro: DeepSeek (modelo IA)
-   ├── 🔧 Herramientas: terminal, archivos, web
-   ├── 🎤 Oídos: faster-whisper (transcribe audios)
-   ├── 🗣️ Boca: Edge TTS (genera voz)
-   ├── 🔐 Caja fuerte: variables de entorno (APIs)
-   └── 🕸️ Web: tudashboard.apps.nan.builders
-```
+❌ **Compartir el token de tu bot** — cualquiera que lo tenga podría hablar con tu asistente  
+❌ **Meter claves de APIs en el código** — usa las variables de entorno (Env tab)  
+❌ **Poner passwords o tokens en repositorios públicos** — aunque sean privados, mejor no  
+❌ **Hacer `rm -rf /`** — te cargas el ordenador entero  
 
 ---
 
-## Lo que **NO** debes hacer
+## No entiendo algo
 
-❌ **Meter claves en el código** → usar Env vars  
-❌ **Compartir tu token de bot** → cualquiera hablaría con tu agente  
-❌ **Olvidarte de la config de voz al reiniciar** → guarda el comando `cat` de antes  
-❌ **Hacer `rm -rf` en la raíz** → te cargas todo
+Este tutorial es abierto. Si algo no se entiende, puedes:
 
----
+- Preguntar en el Discord de NaN.builders (la gente ayuda)
+- Buscar en Google "qué es un comando en Linux"
+- Leer el párrafo otra vez más despacio
 
-## Siguientes pasos
-
-- Aprende a usar Git desde la consola
-- Prueba a que tu agente te busque cosas en Internet
-- Conéctalo a APIs de datos públicos
-- Que despliegue webs el solo con un mensaje
-- Únete al Discord de NaN y pregunta dudas
+Todo lo que aquí se explica se hace desde el navegador (cloud.nan.builders) y Telegram. No necesitas instalar nada en tu ordenador personal.
 
 ---
 
-> Creado el 23 de mayo de 2026 por @Ntizar  
-> NaN.builders Member EU  
-> Preguntas: abre un Issue en este repo
+## Glosario para novatos
+
+| Palabra | Significa |
+|---------|-----------|
+| **Agente** | Tu ordenador remoto + el asistente que vive dentro |
+| **MicroVM** | El ordenador pequeño en Internet |
+| **Console** | La pantalla negra donde escribes órdenes |
+| **Terminal** | Lo mismo que consola |
+| **Comando** | Una orden que le das al ordenador escribiendo |
+| **Token** | Una contraseña larga para conectar servicios |
+| **Bot** | Un programa que habla por Telegram |
+| **STT** | Speech-to-text: convertir voz en texto (que te escuche) |
+| **TTS** | Text-to-speech: convertir texto en voz (que te hable) |
+| **Env** | Environment: las variables de entorno, donde guardas claves |
+| **Repo / Repositorio** | Una carpeta de código en GitHub |
+| **Push** | Subir código a GitHub |
+| **Clone / Clonar** | Descargar un repositorio a tu ordenador |
+| **Build** | Compilar / preparar el código para funcionar |
+| **Servidor** | Un programa que se queda esperando peticiones |
+| **Puerto** | Un número que identifica un servicio (como el 3000) |
+
+---
+
+> Hecho por alguien que empezó sin saber nada  
+> NaN.builders Member — 2026
